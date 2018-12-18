@@ -12,14 +12,8 @@ ASP.NET Routing is a pattern matching system, it is at core of every ASP.NET MVC
 The ASP.NET Routing module is responsible for mapping incoming browser requests to particular MVC controller actions.
 
 ASP.NET Routing is setup in two places:
-- in the Web.config file:
-  - system.web.httpModules section
-  - system.web.httpHandlers section
-  - system.webserver.modules section
-  - system.webserver.handlers section
 - in the Global.asax file:
   - a route table is created during the Application Start event
-
 ```csharp
 namespace MvcApplication1
 {
@@ -29,10 +23,10 @@ namespace MvcApplication1
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapRoute(
-            "Default", // Unique name
-            "{controller}/{action}/{id}", // URL pattern
-            new { controller = "Home", action = "Index", id = @"\d+" } // Defaults and Constraints
-          );
+                "Default",                                              // Unique Route name
+                "{controller}/{action}/{id}",                           // URL pattern with parameters
+                new { controller = "Home", action = "Index", id = "" }  // Defaults and Constraints
+            );
         }
 
         protected void Application_Start()
@@ -41,5 +35,32 @@ namespace MvcApplication1
         }
     }
 }
-
 ```
+
+- in the Controllers:
+  - using Route attributes <br/>(This route attribute will run your About method any time a request comes in with /about as the
+URL.)
+```csharp
+public class HomeController : Controller
+{
+  [Route("About")]
+  public ActionResult Entry()
+  {
+    return View();
+  }
+}
+```
+
+## Creating Custom Routes
+
+Add any custom route to the Global.asax file.
+
+Like for example a route named Blog, which handles requests that look like /Archive/entry date:
+```csharp
+routes.MapRoute(
+  "Blog",
+  "Archive/{entryDate}",
+  new { controller = "Archive", action = "Entry" }
+);
+```
+Defining Attribute Routes
