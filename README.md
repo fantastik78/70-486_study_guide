@@ -51,7 +51,7 @@
   - Plan a localization strategy; create and apply resources to UI including JavaScript resources; set cultures; implement server side localization and globalization
 - Design and implement MVC controllers and actions
   - Apply authorization attributes, filters including global, authentication, and overriddable filters; choose and implement custom HTTP status codes and responses; implement action results; implement MVC areas; implement Dependency Injection for services in controllers
-- Design and implement routes
+- [Design and implement routes](Develop_the_User_Experience/Design_and_implement_routes.md)
   - Define a route to handle a URL pattern; apply route constraints; ignore URL patterns; add custom route parameters; define areas; define routes that interoperate with Single Page Application frameworks such as Angular
 - Control application behavior by using MVC extensibility points
   - Create custom middleware and inject it into the pipeline; implement MVC filters and controller factories; control application behavior by using action results, model binders, and route handlers; inject services into a view
