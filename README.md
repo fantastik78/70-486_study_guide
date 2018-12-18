@@ -5,7 +5,7 @@
   - Plan data access; plan for separation of concerns, appropriate use of models, views, controllers, components, and service dependency injection; choose between client-side and server-side processing; design for scalability; choose between ASP.NET Core and ASP.NET; choose when to use .NET standard libraries
 - Design a distributed application
   - Design a hybrid application; plan for session management in a distributed environment; plan web farms; run Microsoft Azure services on-premises with Azure Pack; enable deferred processing through Azure features including queues, scheduled and on-demand jobs, Azure Functions, and Azure Web Jobs
-- Design and implement the Azure Web Apps life cycle
+- [Design and implement the Azure Web Apps life cycle](Design_the_application_architecture/Design_and_implement_the_Azure_Web_Apps_life_cycle.md)
   - Identify and implement Start, Run, and Stop events; code against application events in applications; configure startup tasks, including IIS, app pool configuration, and third-party tools
 - Configure state management
   - Choose a state management mechanism including in-process, out of process, and Redis-based state management; plan for scalability; use cookies or local storage to maintain state; apply configuration settings in web.config files; implement sessionless state including query strings; configure middleware to enable session and application state in ASP.NET Core
