@@ -1,3 +1,11 @@
+> This chapter should cover:
+> - Define a route to handle a URL pattern
+> - Apply route constraints
+> - Ignore URL patterns
+> - Add custom route parameters
+> - Define areas
+> - Define routes that interoperate with Single Page Application frameworks such as Angular
+
 # Routing
 
 ASP.NET Routing is a pattern matching system, it is at core of every ASP.NET MVC request.
