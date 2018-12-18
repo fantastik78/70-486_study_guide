@@ -14,6 +14,7 @@ The ASP.NET Routing module is responsible for mapping incoming browser requests 
 ASP.NET Routing is setup in two places:
 - in the Global.asax file:
   - a route table is created during the Application Start event
+
 ```csharp
 namespace MvcApplication1
 {
@@ -21,7 +22,7 @@ namespace MvcApplication1
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapMvcAttributeRoutes();
             routes.MapRoute(
                 "Default",                                              // Unique Route name
                 "{controller}/{action}/{id}",                           // URL pattern with parameters
@@ -36,14 +37,30 @@ namespace MvcApplication1
     }
 }
 ```
+- in the Controllers (MVC5):
+  - using Route attributes <br/>(This route attribute will run your About method any time a request comes in with /about or /home/about as the URL.)
+```csharp
+namespace MvcApplication1
+{
+    public class MvcApplication : System.Web.HttpApplication
+    {
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.MapMvcAttributeRoutes();
+        }
 
-- in the Controllers:
-  - using Route attributes <br/>(This route attribute will run your About method any time a request comes in with /about as the
-URL.)
+        protected void Application_Start()
+        {
+            RegisterRoutes(RouteTable.Routes);
+        }
+    }
+}
+```
 ```csharp
 public class HomeController : Controller
 {
   [Route("About")]
+  [Route("Home/About")]
   public ActionResult Entry()
   {
     return View();
@@ -51,7 +68,9 @@ public class HomeController : Controller
 }
 ```
 
-## Creating Custom Routes
+## Attribute Routing
+
+## Traditional Routing
 
 Add any custom route to the Global.asax file.
 
