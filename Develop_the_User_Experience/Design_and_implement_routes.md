@@ -58,14 +58,22 @@ namespace MvcApplication1
 }
 ```
 ```csharp
-public class HomeController : Controller
+[Route("home/{action}")]
+public class HomeController: Controller
 {
-  [Route("About")]
-  [Route("Home/About")]
-  public ActionResult Entry()
+  [Route("home")][Route("home/index")]
+  public ActionResult Index()
   {
-    return View();
-  }
+		return View();
+	}
+	public ActionResult About()
+  {
+		return View();
+	}
+	public ActionResult Contact()
+  {
+		return View();
+	}
 }
 ```
 
