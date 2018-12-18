@@ -18,23 +18,23 @@ ASP.NET Routing is setup in two places:
 ```csharp
 namespace MvcApplication1
 {
-    public class MvcApplication : System.Web.HttpApplication
+  public class MvcApplication : System.Web.HttpApplication
+  {
+    public static void RegisterRoutes(RouteCollection routes)
     {
-        public static void RegisterRoutes(RouteCollection routes)
-        {
-            routes.MapMvcAttributeRoutes();
-            routes.MapRoute(
-                "Default",                                              // Unique Route name
-                "{controller}/{action}/{id}",                           // URL pattern with parameters
-                new { controller = "Home", action = "Index", id = "" }  // Defaults and Constraints
-            );
-        }
-
-        protected void Application_Start()
-        {
-            RegisterRoutes(RouteTable.Routes);
-        }
+      routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+      routes.MapRoute(
+        "Default",                                              // Unique Route name
+        "{controller}/{action}/{id}",                           // URL pattern with parameters
+        new { controller = "Home", action = "Index", id = "" }  // Defaults and Constraints
+      );
     }
+
+    protected void Application_Start()
+    {
+      RegisterRoutes(RouteTable.Routes);
+    }
+  }
 }
 ```
 - in the Controllers (MVC5):
@@ -42,18 +42,19 @@ namespace MvcApplication1
 ```csharp
 namespace MvcApplication1
 {
-    public class MvcApplication : System.Web.HttpApplication
+  public class MvcApplication : System.Web.HttpApplication
+  {
+    public static void RegisterRoutes(RouteCollection routes)
     {
-        public static void RegisterRoutes(RouteCollection routes)
-        {
-            routes.MapMvcAttributeRoutes();
-        }
-
-        protected void Application_Start()
-        {
-            RegisterRoutes(RouteTable.Routes);
-        }
+      routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+      routes.MapMvcAttributeRoutes();
     }
+      
+    protected void Application_Start()
+    {
+      RegisterRoutes(RouteTable.Routes);
+    }
+  }
 }
 ```
 ```csharp
@@ -82,4 +83,3 @@ routes.MapRoute(
   new { controller = "Archive", action = "Entry" }
 );
 ```
-Defining Attribute Routes
