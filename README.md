@@ -69,7 +69,7 @@
   - Collect diagnostic information by using Azure App Insights; choose log types, for example, event logs, performance counters, and crash dumps; stream logs directly to Visual Studio from a deployed site; debug an Azure application by using Visual Studio and remote debugging; interact directly with remote Azure websites using Server Explorer
   
 ### Design and Implement Security (15-20%)
-- onfigure authentication
+- Configure authentication
   - Authenticate users; enforce authentication settings; implement ASP.NET Core Identity; enable Facebook, Google and other external providers; implement account confirmation, password recovery, and multi-factor authentication; perform authentication using Azure Active Directory, Azure Active Directory B2C, Azure Active Directory B2B, and Microsoft Identity manage user session by using cookies; acquire access tokens using the Microsoft Authentication Library (MSAL)
 - Configure and apply authorization
   - Create roles; authorize roles programmatically; configure and work with custom UserStores using middleware; configure controllers and actions to participate in authorization
