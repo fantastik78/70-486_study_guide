@@ -1,5 +1,5 @@
 > This chapter should cover:
-> - [Serialize models and data using supported serialization formats, including JSON, XML, protobuf, and WCF/SOAP](#Serialize-models-and-data-using-supported-serialization-formats-including-JSON-XML-protobuf-and-WCF-SOAP)
+> - [Serialize models and data using supported serialization formats, including JSON, XML, protobuf, and WCF/SOAP](#serialize-models-and-data-using-supported-serialization-formats-including-json-xml-protobuf-and-wcfsoap)
 > - Implement model and property binding, including custom binding and model validation
 > - Implement web socket communication in MVC
 > - Implement file uploading and multipart data
