@@ -59,13 +59,13 @@
   - Serialize models and data using supported serialization formats, including JSON, XML, protobuf, and WCF/SOAP; implement model and property binding, including custom binding and model validation; implement web socket communication in MVC; implement file uploading and multipart data; use AutoRest to build clients
   
 ### Troubleshoot and Debug Web Applications (20-25%)
-- Prevent and troubleshoot runtime issues
+- [Prevent and troubleshoot runtime issues](Troubleshoot_and_Debug_Web_Applications/Prevent_and_troubleshoot_runtime_issues.md)
   - Troubleshoot performance, security, and errors; implement tracing, logging, and debugging including IntelliTrace; enable and configure health monitoring including Performance Monitor; configure and use App Insights runtime telemetry
-- Design an exception handling strategy
+- [Design an exception handling strategy](Troubleshoot_and_Debug_Web_Applications/Design_an_exception_handling_strategy.md)
   - Handle exceptions across multiple layers; use MVC middleware to configure error handling; use different exception handling strategies for different environments; create and display custom error pages; configure a custom pipeline for error handling; handle first chance exceptions; configure and use App Insights; log application exceptions
-- Test a web application
+- [Test a web application](Troubleshoot_and_Debug_Web_Applications/Test_a_web_application.md)
   - Create and run unit tests, for example, use the Assert class, create mocks and stubs; create and run web tests including using Browser Link; debug a web application in multiple browsers and mobile emulators; use Azure DevTest Labs; use Visual Studio Team Services
-- Debug an Azure application
+- [Debug an Azure application](Troubleshoot_and_Debug_Web_Applications/Debug_an_Azure_application.md)
   - Collect diagnostic information by using Azure App Insights; choose log types, for example, event logs, performance counters, and crash dumps; stream logs directly to Visual Studio from a deployed site; debug an Azure application by using Visual Studio and remote debugging; interact directly with remote Azure websites using Server Explorer
   
 ### Design and Implement Security (15-20%)
