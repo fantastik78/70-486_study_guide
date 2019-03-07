@@ -45,15 +45,15 @@
   - Implement mobile specific UI elements such as touch input, low bandwidth situations, and device oritentation changes; define and implement a strategy for working with mobile browsers
 
 ### Develop the User Experience (15-20%)
-- Plan for search engine optimization and accessibility
+- [Plan for search engine optimization and accessibility](Develop_the_User_Experience/Plan_for_search_engine_optimization_and_accessibility.md)
   - Use analytical tools to parse HTML; provide an xml sitemap and robots.txt file to improve scraping; write semantic markup for accessibility, for example, screen readers; use rich snippets to increase content visibility
-- Plan and implement globalization and localization
+- [Plan and implement globalization and localization](Develop_the_User_Experience/Plan_and_implement_globalization_and_localization.md)
   - Plan a localization strategy; create and apply resources to UI including JavaScript resources; set cultures; implement server side localization and globalization
-- Design and implement MVC controllers and actions
+- [Design and implement MVC controllers and actions](Develop_the_User_Experience/Design_and_implement_MVC_controllers_and_actions.md)
   - Apply authorization attributes, filters including global, authentication, and overriddable filters; choose and implement custom HTTP status codes and responses; implement action results; implement MVC areas; implement Dependency Injection for services in controllers
 - [Design and implement routes](Develop_the_User_Experience/Design_and_implement_routes.md)
   - Define a route to handle a URL pattern; apply route constraints; ignore URL patterns; add custom route parameters; define areas; define routes that interoperate with Single Page Application frameworks such as Angular
-- Control application behavior by using MVC extensibility points
+- [Control application behavior by using MVC extensibility points](Develop_the_User_Experience/Control_application_behavior_by_using_MVC_extensibility_points.md)
   - Create custom middleware and inject it into the pipeline; implement MVC filters and controller factories; control application behavior by using action results, model binders, and route handlers; inject services into a view
 - [Design and implement serialization and model binding](Develop_the_User_Experience/Design_and_implement_serialization_and_model_binding.md)
   - Serialize models and data using supported serialization formats, including JSON, XML, protobuf, and WCF/SOAP; implement model and property binding, including custom binding and model validation; implement web socket communication in MVC; implement file uploading and multipart data; use AutoRest to build clients
