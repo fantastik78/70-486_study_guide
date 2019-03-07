@@ -55,7 +55,7 @@
   - Define a route to handle a URL pattern; apply route constraints; ignore URL patterns; add custom route parameters; define areas; define routes that interoperate with Single Page Application frameworks such as Angular
 - Control application behavior by using MVC extensibility points
   - Create custom middleware and inject it into the pipeline; implement MVC filters and controller factories; control application behavior by using action results, model binders, and route handlers; inject services into a view
-- Design and implement serialization and model binding
+- [Design and implement serialization and model binding](Develop_the_User_Experience/Design_and_implement_serialization_and_model_binding.md)
   - Serialize models and data using supported serialization formats, including JSON, XML, protobuf, and WCF/SOAP; implement model and property binding, including custom binding and model validation; implement web socket communication in MVC; implement file uploading and multipart data; use AutoRest to build clients
   
 ### Troubleshoot and Debug Web Applications (20-25%)
