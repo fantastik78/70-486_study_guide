@@ -21,15 +21,15 @@
   - Add custom request processing modules to the pipeline; add, remove, and configure services used in the application; design and implement middleware; design for kestrel, Http.sys web server and IIS; design and implement startup filters
   
 ### Design the build and deployment architecture (10-15%)
-- Design a browser artifact build strategy
+- [Design a browser artifact build strategy](Design_the_build_and_deployment_architecture/Design_a_browser_artifact_build_strategy.md)
   - Design a JavaScript build pipeline using Gulp, Grunt, npm and Bower; design an artifact build strategy using Less, Sass and Font Awesome; design and implement a bundling and minification strategy for broswer artifacts, including JavaScript, CSS and images
-- Design a server build strategy
+- [Design a server build strategy](Design_the_build_and_deployment_architecture/Design_a_server_build_strategy.md)
   - Manage NuGet dependencies; target runtimes, including the full .NET Framework, .NET core, and .NET standard; manage debug and release configurations, including compilation and optimization options; include or exclude files from build; manage build sources, including content, resources, and shared files; implement metadata for projects, including version, release notes, and descriptions; define other build options, including xmlDoc and warningsAsErrors; work with static files in ASP.NET core
-- Design a publishing strategy
+- [Design a publishing strategy](Design_the_build_and_deployment_architecture/Design_a_publishing_strategy.md)
   - Implement application publishing using dotnet.exe; manage publishing options in csproj; implement additional tooling; implement pre-publish and post-publish scripts; implement native compilation; publish to Docker container image
-- Implement an Azure deployment strategy
+- [Implement an Azure deployment strategy](Design_the_build_and_deployment_architecture/Implement_an_Azure_deployment_strategy.md)
   - Deploy Azure Web App using supported deployment models including FTP, Kudu, Web Deploy, and Visual Studio Publishing Wizard; provision ARM- based resources while deploying applications; implement deployment environments, including dev, test, and prod in Azure; use deployment slots for staging sites; deploy to Azure Stack
-- Implement a on-premises deployment strategy
+- [Implement a on-premises deployment strategy](Design_the_build_and_deployment_architecture/Implement_a_on-premises_deployment_strategy.md)
   - Deploy application to IIS using Web Deploy, xcopy, and Visual Studio Publishing Wizard; deploy application to Windows Nano Server, deploy application to IIS Hosted Web Core, deploy application to HTTP.sys web server; deploy application to Kestrel on Windows and Linux; implement reverse proxying to Kestrel using IIS and Nginx
 
 ### Design the User Experience (15-20%)
