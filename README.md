@@ -35,7 +35,7 @@
 ### Design the User Experience (15-20%)
 - [Create elements of the user interface for a web application](Design_the_User_Experience/Create_elements_of_the_user_interface_for_a_web_application.md)
   - Create and apply styles by using CSS; structure and lay out the user interface by using HTML; implement dynamic page content based on a design
-- [Design and implement UI behavior
+- [Design and implement UI behavior](Design_the_User_Experience/Design_and_implement_UI_behavior.md)
   - Implement client-side validation; use JavaScript to manipulate the DOM; extend objects by using prototypal inheritance; use AJAX to make partial page updates
 - [Design the UI layout of an application](Design_the_User_Experience/Design_the_UI_layout_of_an_application.md)
   - Implement partial views and view components for reuse in different areas of the application; design and implement pages by using Razor Pages; design and implement layouts to provide visual structure; define and render optional and required page sections; create and use tag and HTML helpers to simplify markup
