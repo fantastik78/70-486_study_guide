@@ -79,3 +79,11 @@
   - Apply encryption to application data; apply encryption to the configuration sections of an application; sign application data to prevent tampering; secure data using Azure Key Vault; implement encryption for data protection using the data protection APIs in transit and at rest
 - [Implement a secure site](Design_and_Implement_Security/Implement_a_secure_site.md)
   - Secure communication by applying SSL certificates; require SSL for all requests; enable SSL hosting in the development environment; implement SSL using Azure Load Balancers; salt and hash passwords for storage; use HTML encoding to prevent cross-site scripting attacks (ANTI-XSS Library); implement deferred validation and handle unvalidated requests, for example, form, querystring, and URL; prevent SQL injection attacks by parameterizing queries; prevent cross-site request forgeries (XSRF); use Azure Security Center to monitor Azure resources; implement Cross Origin Resource Sharing (CORS); implement protection against open redirect attacks
+
+___
+
+Badges:
+
+![Note](https://img.shields.io/badge/Info-Note-purple.svg)
+![Warning](https://img.shields.io/badge/info-warning-yellow.svg)
+![Danger](https://img.shields.io/badge/info-danger-red.svg)
