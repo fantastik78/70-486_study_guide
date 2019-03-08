@@ -112,4 +112,36 @@ namespace HelloWorld.Services
 ## Choose between client-side and server-side processing
 ## Design for scalability
 ## Choose between ASP.NET Core and ASP.NET
+### Framework selection:
+* ASP.NET Core
+  * Cross-Plateform needs
+  * Microservices
+  * Containers
+  * Need of high-performance
+  * Need for scalability
+  * Side-by-side versioning
+  * Open source
+
+Razor Pages is the recommended approach to create a Web UI as of ASP.NET Core 2.x.
+
+* ASP.NET 4.x
+  * Need to use .NET libraries or NuGet package not available for .NET Core
+  * Need to use .NET technologies not available for .NET Core
+    * ASP.NET Web Forms
+    * ASP.NET Web Pages
+    * WCF service implementation (aka server side implementation)
+    * Windows Workflow Foundation / Workflow Services / WCF Data Services
+    * Language support: Visual Basic
+  * Need to use a platform that doesn't support .NET Core
+
 ## Choose when to use .NET standard libraries
+
+.NET Standard is a specification of APIs.  
+The purpose of .NET Standard is to share code between runtimes.  
+When you want to share code between different runtimes in the .NET Ecosystem, use .NET Standard.
+
+* .NET Standard is a set of curated APIs, picked by Microsoft, PCLS are not.
+  * The APIs that a PCL contains is dependent on the platforms that you choose to target when you create a PCL. This makes a PCL only sharable for the specific targets that you choose.
+
+* .NET Standard is platform-agnostic, it can run anywhere, on Windows, Mac, Linux and so on.
+  * PCLs can also run cross-platform, but they have a more limited reach. PCLs can only target a limited set of platform
