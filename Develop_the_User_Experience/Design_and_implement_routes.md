@@ -7,6 +7,13 @@
 > - Define routes that interoperate with Single Page Application frameworks such as Angular
 
 ## Define a route to handle a URL pattern
+
+Core razor:
+```
+@page "{id:int}"
+```
+
+
 ## Apply route constraints
 ## Ignore URL patterns
 ## Add custom route parameters
