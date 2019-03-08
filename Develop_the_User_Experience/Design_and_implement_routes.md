@@ -6,9 +6,19 @@
 > - Define areas
 > - Define routes that interoperate with Single Page Application frameworks such as Angular
 
+## Define a route to handle a URL pattern
+## Apply route constraints
+## Ignore URL patterns
+## Add custom route parameters
+## Define areas
+## Define routes that interoperate with Single Page Application frameworks such as Angular
+
 # Routing
 
+    ASP.NET MVC 5
+
 ASP.NET Routing is a pattern matching system, it is at core of every ASP.NET MVC request.
+
 The ASP.NET Routing module is responsible for mapping incoming browser requests to particular MVC controller actions.
 
 ASP.NET Routing is setup in two places:
@@ -64,30 +74,17 @@ public class HomeController: Controller
   [Route("home")][Route("home/index")]
   public ActionResult Index()
   {
-		return View();
-	}
-	public ActionResult About()
+    return View();
+  }
+
+  public ActionResult About()
   {
-		return View();
-	}
-	public ActionResult Contact()
+    return View();
+  }
+  
+  public ActionResult Contact()
   {
-		return View();
-	}
+    return View();
+  }
 }
-```
-
-## Attribute Routing
-
-## Traditional Routing
-
-Add any custom route to the Global.asax file.
-
-Like for example a route named Blog, which handles requests that look like /Archive/entry date:
-```csharp
-routes.MapRoute(
-  "Blog",
-  "Archive/{entryDate}",
-  new { controller = "Archive", action = "Entry" }
-);
 ```
