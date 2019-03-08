@@ -25,7 +25,7 @@ Kestrel support:
 Even if a reverse proxy server isn't required, using a reverse proxy server might be a good choice.
 
 #### How to use Kestrel:
-In Program.cs
+In Program.cs, using `WebHost.CreateDefaultBuilder`
 ```csharp
 public class Program
 {
@@ -55,7 +55,7 @@ public class Program
             });
 }
 ```
-
+Or with `WebHostBuilder`
 ```csharp
 public static void Main(string[] args)
 {
