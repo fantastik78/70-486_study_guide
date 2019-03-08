@@ -22,6 +22,16 @@ Most built-in Tag Helpers target standard HTML elements and provide server-side 
 What tag helper provide:
 - An HTML-friendly development experience
 
+
+![](/Misc/Images/dotnet-core.png | width=48) ASP.NET CORE
+
+
+Interesting Tag Helper:
+- asp-controller
+- asp-action
+- asp-route
+- asp-route-{value}
+
 ### Create tag helper
 
 ```csharp
