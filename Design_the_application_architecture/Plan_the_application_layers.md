@@ -69,7 +69,7 @@ public class HomeController : Controller
 ```
 
 Dependency injection inside a MVC View
-```html
+```cshtml
 @using HelloWorld.Services
 @inject IScopedDependency ScopedDependency
 <!DOCTYPE html>
