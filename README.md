@@ -84,6 +84,6 @@ ___
 
 Badges:
 
-![Note](https://img.shields.io/badge/Info-Note-purple.svg)
-![Warning](https://img.shields.io/badge/info-warning-yellow.svg)
-![Danger](https://img.shields.io/badge/info-danger-red.svg)
+![Note](https://img.shields.io/badge/Info-Important-yellow.svg)
+![Important](https://img.shields.io/badge/Info-Warning-orange.svg)
+![Danger](https://img.shields.io/badge/Info-Attention-red.svg)
