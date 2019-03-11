@@ -7,6 +7,14 @@
 
 ## Implement partial views and view components for reuse in different areas of the application
 
+Pages / Views
+Partial Views / ViewComponent
+
+RenderBody
+RenderSection
+
+_ViewImports and _ViewStart files
+
 ## Design and implement pages by using Razor Pages
 
 ## Design and implement layouts to provide visual structure
