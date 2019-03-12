@@ -1,9 +1,9 @@
 > This chapter should cover:
-> - [Design and implement pages by using Razor Pages]()
-> - [Design and implement layouts to provide visual structure]()
-> - [Define and render optional and required page sections]()
-> - [Implement partial views and view components for reuse in different areas of the application]()
-> - [Create and use tag and HTML helpers to simplify markup]()
+> - [Design and implement pages by using Razor Pages](#design-and-implement-pages-by-using-razor-pages)
+> - [Design and implement layouts to provide visual structure](#design-and-implement-layouts-to-provide-visual-structure)
+> - [Define and render optional and required page sections](#define-and-render-optional-and-required-page-sections)
+> - [Implement partial views and view components for reuse in different areas of the application](#implement-partial-views-and-view-components-for-reuse-in-different-areas-of-the-application)
+> - [Create and use tag and HTML helpers to simplify markup](#create-and-use-tag-and-html-helpers-to-simplify-markup)
 
 ## Design and implement pages by using Razor Pages
 ### Razor Page
