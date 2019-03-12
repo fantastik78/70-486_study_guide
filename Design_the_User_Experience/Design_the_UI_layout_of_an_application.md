@@ -290,6 +290,34 @@ Interesting Tag Helper:
 
 ### Create tag helper
 
+Create a C# class:
 ```csharp
+    [HtmlTargetElement("hello-world")]
+    public class HelloWorldTagHelper : TagHelper
+    {
+        public override void Process(TagHelperContext context, TagHelperOutput output)
+        {
+            // Replace hello-world by span
+            output.TagName = "span";
+            // Set the content of the HTML tag
+            output.Content.SetContent($"HelloWorld @ {DateTime.Now.ToShortTimeString()}");
+            // Add an 'time' attribute to the HTML tag
+            output.Attributes.SetAttribute("time", DateTime.Now.ToShortTimeString());
+            // Specify that the hello-word self closing tag should have start tag and a end tag
+            output.TagMode = TagMode.StartTagAndEndTag;
+        }
+    }
+```
 
+Add the HelloWorldTagHelper to the Views/_ViewImports.cshtml file:
+```cshtml
+@using HelloWorld
+@namespace HelloWorld.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, HelloWorld
+```
+
+Use the HelloWorldTagHelper in a Razor page:
+```cshtml
+<hello-world/>
 ```
