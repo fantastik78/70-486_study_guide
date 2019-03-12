@@ -115,8 +115,33 @@ A _ViewImports.cshtml file can be placed within any folder, in which case it wil
 
 ## Define and render optional and required page sections
 
-RenderBody
-RenderSection
+### RenderBody
+RenderBody is called to render the content of a child view. Any content on said view that is not in a @section will be rendered by RenderBody
+
+```cshtml
+@RenderBody()
+```
+
+This allows us to separate layout that is common to all views from layout that is specific to a single view.
+
+### RenderSection
+
+RenderSection, following with the "separate content from layout" theme, allows us to designate a place for where content will be rendered that is different from RenderBody()
+
+Inside the _Layout.cshtml for example (by default section are required by each child view):
+```cshtml
+@RenderSection("footer", required: false)
+```
+
+We can designate content to be rendered at RenderSection using a @section declaration.
+
+Inside one of the child view:
+```cshtml
+@section Footer
+{
+    <p>Section/Index page</p>
+}
+```
 
 ## Implement partial views and view components for reuse in different areas of the application
 
@@ -158,7 +183,96 @@ A ModelExpression infers the @Model. syntax. For example, for="Animals" can be u
 
 ### ViewComponent
 
+View components are similar to partial views.  View components don't use model binding, and only depend on the data provided when calling into it.
 
+A view component consists of two parts:
+ * A class, that is:
+   * typically derived from `ViewComponent`
+   * or a class with the `[ViewComponent]` attribute, or deriving from a class with the `[ViewComponent]` attribute
+   * or a class where the name ends with the suffix `ViewComponent`
+ * the result it returns (typically a view). 
+
+A ViewComponent can't use filters, but fully support dependency injection.
+
+#### Create a view component
+
+##### The class:
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using ViewComponentSample.Models;
+
+namespace ViewComponentSample.ViewComponents
+{
+    public class PriorityListViewComponent : ViewComponent
+    {
+        private readonly ToDoContext db;
+
+        public PriorityListViewComponent(ToDoContext context)
+        {
+            db = context;
+        }
+
+        // InvokeAsync can take an arbitrary number of arguments
+        public async Task<IViewComponentResult> InvokeAsync(int maxPriority, bool isDone)
+        {
+            var items = await GetItemsAsync(maxPriority, isDone);
+            return View(items);
+        }
+
+        private Task<List<TodoItem>> GetItemsAsync(int maxPriority, bool isDone)
+        {
+            return db.ToDo.Where(x => x.IsDone == isDone && x.Priority <= maxPriority).ToListAsync();
+        }
+    }
+}
+```
+
+##### The view 
+Create the Views/Shared/Components folder. This folder must be named Components.  
+Create a Views/Shared/Components/PriorityList/Default.cshtml Razor view.
+ * PriorityList folder name must match the name of the view component class, or the name of the class minus the suffix
+ * Default is used for the view name by convention
+
+```cshtml
+@model IEnumerable<ViewComponentSample.Models.TodoItem>
+
+<h3>Priority Items</h3>
+<ul>
+    @foreach (var todo in Model)
+    {
+        <li>@todo.Name</li>
+    }
+</ul>
+```
+
+To specify to an other view (to display a view different than Default.cshtml)
+```csharp
+public async Task<IViewComponentResult> InvokeAsync(int maxPriority, bool isDone)
+{
+    // ...
+    return View("OtherView", items);
+}
+```
+
+##### Reference a View Component
+
+Using HTML Helper (c#):
+```cshtml
+@await Component.InvokeAsync("PriorityList", new { maxPriority = 2, isDone = false })
+```
+
+The first argument is the name of the component we want to invoke or call.  
+Subsequent parameters are passed to the component. InvokeAsync can take an arbitrary number of arguments.
+
+Using Tag Helper (Razor syntax)
+```cshtml
+<vc:priority-list max-priority="2" is-done="false">
+</vc:priority-list>
+```
 ## Create and use tag and HTML helpers to simplify markup
 
 Tag Helpers enable server-side code to participate in creating and rendering HTML elements in Razor files.
