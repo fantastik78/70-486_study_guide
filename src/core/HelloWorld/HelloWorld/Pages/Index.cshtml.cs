@@ -9,9 +9,11 @@ namespace HelloWorld.Pages
 {
     public class IndexModel : PageModel
     {
+        public string Message { get; set; }
+
         public void OnGet()
         {
-
+            Message = "Hello World!";
         }
     }
 }
