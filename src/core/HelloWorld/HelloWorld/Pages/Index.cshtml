@@ -1,11 +1,14 @@
 ﻿@page
+@using HelloWorld.Services
 @model IndexModel
+@inject IMyService MyService
 @{
     ViewData["Title"] = "Home page";
 }
 
 <div class="page-header">
     <h1>@Model.Message</h1>
+    <p>@MyService.SayHelloWorld()</p>
 </div>
 <div>
     <hello-world />
