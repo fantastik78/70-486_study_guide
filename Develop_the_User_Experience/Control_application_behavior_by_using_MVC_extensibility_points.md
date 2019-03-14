@@ -25,6 +25,41 @@ public class MyMiddleware
 }
 ```
 
+The common practice is to create a middleware extension.
+
+```csharp
+public static class MyMiddlewareExtensions
+{
+    public static IApplicationBuilder UseMyMiddleware(this IApplicationBuilder builder)
+    {
+        return builder.UseMiddleware<MyMiddleware>();
+    }
+}
+```
+
+Add the middelware in the pipeline using the extension.
+Go to Startup.cs, and add the middleware in the Configure method:
+```csharp
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+            }
+
+            // Use of the MyMiddleware in the app pipeline
+            app.UseMyMiddleware();
+
+            app.UseStaticFiles();
+            app.UseCookiePolicy();
+            app.UseMvc();
+        }
+```
+
 ## Implement MVC filters and controller factories
 ## Control application behavior by using action results, model binders, and route handlers
 ## Inject services into a view
