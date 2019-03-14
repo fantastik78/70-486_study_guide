@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HelloWorld.Middleware;
 using HelloWorld.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -48,6 +49,7 @@ namespace HelloWorld
                 app.UseExceptionHandler("/Error");
             }
 
+            app.UseMyMiddleware();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
