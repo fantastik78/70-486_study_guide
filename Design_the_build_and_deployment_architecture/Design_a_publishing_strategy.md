@@ -1,10 +1,10 @@
  > This chapter should cover:
-> - [Implement application publishing using dotnet.exe]()
-> - [Manage publishing options in csproj]()
-> - [Implement additional tooling]()
-> - [Implement pre-publish and post-publish scripts]()
-> - [Implement native compilation]()
-> - [Publish to Docker container image]()
+> - [Implement application publishing using dotnet.exe](#implement-application-publishing-using-dotnetexe)
+> - [Manage publishing options in csproj](#manage-publishing-options-in-csproj)
+> - [Implement additional tooling](#implement-additional-tooling)
+> - [Implement pre-publish and post-publish scripts](#implement-pre-publish-and-post-publish-scripts)
+> - [Implement native compilation](#implement-native-compilation)
+> - [Publish to Docker container image](#publish-to-docker-container-image)
 
 ## Implement application publishing using dotnet.exe
 
@@ -24,8 +24,7 @@ Disadvantages:
 
 #### How to use dotnet.exe in a framework-dependent deployments strategy
 Open a CMD inside the same folder of [project].csproj file, then call  
-`dotnet publish -c Release -o c:\temp\destination_folder`
-
+`dotnet publish -c Release -o c:\temp\destination_folder [--self-contained false]`
 
 ### Self-contained deployments
 
@@ -43,7 +42,60 @@ Disadvantages:
 #### How to use dotnet.exe in a framework-dependent deployments strategy
 
 Open a CMD inside the same folder of [project].csproj file, then call  
-`dotnet publish -c Release -o c:\temp\destination_folder --self-contained -r win-x64`
+`dotnet publish -c Release -o c:\temp\destination_folder --self-contained true -r <RID>`
+
+#### Runtime IDentifier (RID) 
+RID is short for Runtime IDentifier. RID values are used to identify target platforms where the application runs. They're used by .NET packages to represent platform-specific assets in NuGet packages.  
+
+The following list shows a small subset of the most common RIDs used for each OS
+
+##### Windows
+ Portable (.NET Core 2.0 or later versions)
+  * win-x64
+  * win-x86
+  * win-arm
+  * win-arm64
+* Windows 7 / Windows Server 2008 R2
+  * win7-x64
+  * win7-x86
+* Windows 8.1 / Windows Server 2012 R2
+  * win81-x64
+  * win81-x86
+  * win81-arm
+* Windows 10 / Windows Server 2016
+  * win10-x64
+  * win10-x86
+  * win10-arm
+  * win10-arm64
+
+##### Linux
+
+* Portable (.NET Core 2.0 or later versions)
+  * linux-x64 (Most desktop distributions like CentOS, Debian, Fedora, Ubuntu and derivatives)
+  * linux-musl-x64 (Lightweight distributions using musl like Alpine Linux)
+  * linux-arm (Linux distributions running on ARM like Raspberry Pi)
+* Red Hat Enterprise Linux
+  * rhel-x64 (Superseded by linux-x64 for RHEL above version 6)
+  * rhel.6-x64 (.NET Core 2.0 or later versions)
+* Tizen (.NET Core 2.0 or later versions)
+  * tizen
+  * tizen.4.0.0
+  * tizen.5.0.0
+
+##### macOS RIDs
+
+* Portable (.NET Core 2.0 or later versions)
+  * osx-x64 (Minimum OS version is macOS 10.12 Sierra)
+* macOS 10.10 Yosemite
+  * osx.10.10-x64
+* macOS 10.11 El Capitan
+  * osx.10.11-x64
+* macOS 10.12 Sierra (.NET Core 1.1 or later versions)
+  * osx.10.12-x64
+* macOS 10.13 High Sierra (.NET Core 1.1 or later versions)
+  * osx.10.13-x64
+* macOS 10.14 Mojave (.NET Core 1.1 or later versions)
+  * osx.10.14-x64
 
 ## Manage publishing options in csproj
 
