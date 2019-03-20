@@ -8,7 +8,7 @@
 
 ## Implement application publishing using dotnet.exe
 
-### Framework-dependent deployments
+### Framework-dependent deployments (FDD)
 
 In a framework-dependent deployments, your app will use the version of .NET Core that's present on the target system.
 
@@ -26,7 +26,7 @@ Disadvantages:
 Open a CMD inside the same folder of [project].csproj file, then call  
 `dotnet publish -c Release -o c:\temp\destination_folder [--self-contained false]`
 
-### Self-contained deployments
+### Self-contained deployments (SCD)
 
 In a self-contained deployments, you deploy your app and any required third-party dependencies along with the version of .NET Core that you used to build the app.
 
